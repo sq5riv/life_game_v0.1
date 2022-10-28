@@ -16,9 +16,14 @@ if config.config_file_name is not None:
 
 # add your model's MetaData object here
 # for 'autogenerate' support
-# from myapp import mymodel
-# target_metadata = mymodel.Base.metadata
-target_metadata = None
+from dbmodels.cards import Card
+from dbmodels.decks import Deck
+from dbmodels.decks_cards_relation import DC_rel
+from dbmodels.games import Games
+from dbmodels.rules import Rules
+from dbmodels.user import User
+target_metadata = [Card.metadata, Deck.metadata, DC_rel.metadata, Games.metadata, Rules.metadata, User.metadata]
+#target_metadata = None
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
