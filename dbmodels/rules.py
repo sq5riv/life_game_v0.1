@@ -6,6 +6,6 @@ class Rules(Base):
     __tablename__ = 'Rules'
 
     id = Column(Integer, primary_key=True)
-    name = Column(String)
-    version = Column(Integer)
-    rules = Column(JSON)
+    name = Column(String, nullable= False)
+    version = Column(Integer, nullable= False)
+    rules = Column(JSON, nullable= False)

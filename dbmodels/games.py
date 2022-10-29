@@ -6,7 +6,7 @@ class Games(Base):
     __tablename__ = 'Games'
 
     id = Column(Integer, primary_key=True)
-    name = Column(String)
-    save_date= Column(DateTime)
+    name = Column(String(50), nullable= False)
+    save_date= Column(DateTime, nullable= False)
     user = relationship('User')
-    state = Column(JSON)
+    state = Column(JSON, nullable= False)
