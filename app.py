@@ -8,10 +8,10 @@ from endpoints.endpoints import rules as ruep
 from endpoints.endpoints import game as gep
 
 
+app = Flask(__name__, template_folder='./templates')
 
 
-app = Flask(__name__)
-
+app.config["SECRET_KEY"]= 'Trali-la-la-la-la-gramofon-gra.'
 app.config["PROPAGATE_EXCEPTIONS"] = True
 app.config["API_TITLE"] = "Lifegame"
 app.config["API_VERSION"] = "v0.1"

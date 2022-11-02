@@ -1,5 +1,6 @@
 from flask_smorest import Blueprint, abort
 from flask.views import MethodView
+from flask import render_template, url_for
 
 
 root = Blueprint('root', __name__, description='Main page operations')
@@ -13,14 +14,16 @@ game = Blueprint('game', __name__, description='game operations')
 @root.route('/')
 class Main_page(MethodView):
     def get(self):
-        return 'ala ma kota'
+        return render_template('index.html')
 
 @user.route('/login')
 class User_ops(MethodView):
+    def get(self):
+        return 'Login Page'
     def post(self):
         return 'Loged in XD'
     def delete(self):
-        return 'Logout'
+        return 'Logout XD'
 
 @user.route('/new_user')
 class New_user(MethodView):
